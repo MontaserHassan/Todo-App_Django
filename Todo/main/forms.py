@@ -1,5 +1,7 @@
 from django.forms import ModelForm, TextInput
-from .models import Todo
+from .models import Todo, TodoItems
+from django.contrib.auth.models import User 
+from django.contrib.auth.forms import UserCreationForm 
 
 
 class TodoForm(ModelForm):
@@ -18,4 +20,21 @@ class TodoForm(ModelForm):
             # "importance": forms.Select(choices=Todo.importance_of_todo),
             # "is_done": forms.CheckboxInput(),
             # "created_date": forms.HiddenInput(),
+        }
+        
+
+class UserCreationForm(UserCreationForm):
+    
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+        widget = {
+            "username": TextInput(attrs={
+                "color": "blue",
+                "class": "form-control"
+                }),
+            "email": TextInput(attrs={
+                "color": "blue",
+                "class": "form-control"
+                }),
         }

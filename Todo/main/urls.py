@@ -6,5 +6,8 @@ urlpatterns = [
     path('detailed/<str:id>', views.detailed, name="detailed"),
     path('createTodo/', views.createTodo, name="createTodo"),
     path('updateTodo/<str:pk>', views.updateTodo, name="updateTodo"),
-    path('deleteTodo/<str:pk>', views.deleteTodo, name="deleteTodo"),    
+    path('deleteTodo/<str:pk>', views.deleteTodo, name="deleteTodo"),  
+    path('register/', views.createUser, name="register"),
+    path('login/', views.loginUser, name="login"),
+    path('logout/', views.logoutUser, name="logout"),
 ]

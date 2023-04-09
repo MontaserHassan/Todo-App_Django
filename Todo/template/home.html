@@ -3,8 +3,19 @@
 
 {% block content %}
     
-    <h1 style="margin-top: 10px; margin-bottom:10px; margin-left:830px;">Monty List</h1>
+    <h1 class="text-warning mt-5" style="margin-bottom:10px; margin-left:830px;">Monty List</h1>
 
+    <form method="GET" class="mt-5 mb-5">
+    
+        <div class="mt-3 p-1 w-25 ms-5 fw-bold d-inline">
+
+            {{ filter.form }}
+
+            <button class="fw-bold rounded w-auto text-light text-bg-primary" type="submit">Filter</button>
+
+        </div>
+    
+    </form>
 
     <table class="table ml-5 mt-5 text-center mr-5">
         <thead>
