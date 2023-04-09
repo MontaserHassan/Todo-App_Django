@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form class="mt-5">
+
+        <div class="form-group mt-3">
+          <label for="title">Title</label>
+          <input type="title" value="{{ todo.title }}" class="form-control" id="title" aria-describedby="title">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="title">Date</label>
+            <input type="title" value="{{ todo.created_date }}" class="form-control" id="title" aria-describedby="title">
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="email">Email</label>
+          <input type="email" value="{{ todo.email }}" class="form-control" id="email">
+        </div>
+      </form>
+
+{% endblock content %}

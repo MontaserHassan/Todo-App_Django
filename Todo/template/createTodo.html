@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class="mt-5" style="margin-left:830px;">Todo List</h1>
+
+    <form class="mt-4 mb-4"style="margin-left: 250px" method="POST">
+
+        {% csrf_token %}
+        
+        <table>
+
+
+            {{ form.as_p }}
+
+            <!-- {{ form.title.label }}
+            {{ form.title }}
+         -->
+            <!-- {{ form.created_date.label }}
+            {{ todo.created_date }} -->
+        
+            <!-- {{ form.email.label }}
+            {{ todo.email }} -->
+<!-- 
+            {{ form.is_done.label }}
+            {{ todo.isDone }}
+   -->
+            <!-- {{ form.importance.label }}
+            {{ todo.importance }} -->
+
+        </table>
+            
+        <button type="submit" class="btn btn-primary rounded mt-4"> Add </button>
+    
+    </form>
+
+{% endblock content %}

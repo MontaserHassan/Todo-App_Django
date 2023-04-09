@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    
+    <h1 style="margin-top: 10px; margin-bottom:10px; margin-left:830px;">Monty List</h1>
+
+
+    <table class="table ml-5 mt-5 text-center mr-5">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Email</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for todo in todos %}
+                <tr>
+                    <td><a href="{% url 'detailed' todo.id %}">{{ todo.title }}</a></td>
+                    <td>{{ todo.email }}</td>
+                    <td><a href="{% url 'updateTodo' todo.id %}" class="btn btn-info">Update</a></td>
+                    <td><a href="{% url 'deleteTodo' todo.id %}" class="btn btn-danger">Delete</a></td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">No Todos</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+    
+
+    <div class="container mt-5 "style="margin-left:850px;">
+        <a href="{% url 'createTodo' %}" class="btn rounded btn-primary">New Todo</a>
+    </div>
+{% endblock content %}
+    
