@@ -31,7 +31,7 @@ class TodoItems(models.Model):
     description = models.TextField(blank=True, null=True)
     created_date = models.DateTimeField(blank=True, auto_now_add = True, null = True)
     is_completed = models.BooleanField(null = True, default=False)
-    todo = models.ForeignKey(Todo, on_delete=models.DO_NOTHING, null=True, blank=True) 
+    todo = models.ForeignKey(Todo, on_delete=models.CASCADE, null=True, blank=True) 
     
     def __str__(self):
         return self.task
