@@ -38,3 +38,10 @@ class UserCreationForm(UserCreationForm):
                 "class": "form-control"
                 }),
         }
+        
+        
+class TodoItemsForm(ModelForm):
+    class Meta:
+        model = TodoItems
+        fields = "__all__"
+        exclude = ['todo']

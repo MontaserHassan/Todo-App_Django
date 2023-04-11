@@ -7,16 +7,10 @@
     <form class="mt-4 mb-4"style="margin-left: 250px" method="POST">
 
         {% csrf_token %}
-        
-            {{ form.as_p }}
-            
-        <button type="submit" class="btn btn-primary rounded mt-4"> update </button>
-    
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary w-25 rounded mt-4"> Add </button>
     </form>
 
-
-
-
-    </form>
-
-    {% endblock content %}
+{% endblock content %}

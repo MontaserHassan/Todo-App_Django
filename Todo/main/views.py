@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .models import Todo, TodoItems
-from .forms import TodoForm, UserCreationForm
+from .forms import TodoForm, UserCreationForm, TodoItemsForm
 from .filters import TodoFilter
 
 from django.contrib.auth import login, logout, authenticate
@@ -76,6 +76,25 @@ def deleteTodo(req, pk):
     todo.delete()
     return redirect('/')
 
+    
+    
+def createTodoItem(req, pk):
+    form = TodoItemsForm()
+    todo = Todo.objects.get(id = pk)
+    # form = TodoItemForm(instance = todo)
+    if req.method == "POST":
+        form = TodoItemsForm(req.POST)
+        if form.is_valid():
+            todoItem = form.save(commit=False)
+            todoItem.todo = todo
+            todoItem.save()
+            return redirect('/')
+    context = {
+        "form": form
+        }
+    return render(req, "todoItems.html", context)
+    
+    
     
     
 def createUser(req):

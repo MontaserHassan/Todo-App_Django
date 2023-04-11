@@ -24,6 +24,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
+                <th scope="col">New Item</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +34,7 @@
                     <td>{{ todo.email }}</td>
                     <td><a href="{% url 'updateTodo' todo.id %}" class="btn btn-info">Update</a></td>
                     <td><a href="{% url 'deleteTodo' todo.id %}" class="btn btn-danger">Delete</a></td>
+                    <td><a href="{% url 'createTodoItem' todo.id %}" class="btn btn-light">New Item</a></td>
                 </tr>
             {% empty %}
                 <tr>
